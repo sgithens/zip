@@ -317,141 +317,141 @@
             do (write-char (elt *cp437->unicode* c) s)))))
 
 ;; aus SBCL:
-(loop
-    for (cp437 unicode)
-        :in '((#x80 #x00C7)             ; LATIN CAPITAL LETTER C WITH CEDILLA
-              (#x81 #x00FC)             ; LATIN SMALL LETTER U WITH DIAERESIS
-              (#x82 #x00E9)             ; LATIN SMALL LETTER E WITH ACUTE
-              (#x83 #x00E2)             ; LATIN SMALL LETTER A WITH CIRCUMFLEX
-              (#x84 #x00E4)             ; LATIN SMALL LETTER A WITH DIAERESIS
-              (#x85 #x016F)             ; LATIN SMALL LETTER U WITH RING ABOVE
-              (#x86 #x0107)             ; LATIN SMALL LETTER C WITH ACUTE
-              (#x87 #x00E7)             ; LATIN SMALL LETTER C WITH CEDILLA
-              (#x88 #x0142)             ; LATIN SMALL LETTER L WITH STROKE
-              (#x89 #x00EB)             ; LATIN SMALL LETTER E WITH DIAERESIS
-              (#x8A #x0150)             ; LATIN CAPITAL LETTER O WITH DOUBLE ACUTE
-              (#x8B #x0151)             ; LATIN SMALL LETTER O WITH DOUBLE ACUTE
-              (#x8C #x00EE)             ; LATIN SMALL LETTER I WITH CIRCUMFLEX
-              (#x8D #x0179)             ; LATIN CAPITAL LETTER Z WITH ACUTE
-              (#x8E #x00C4)             ; LATIN CAPITAL LETTER A WITH DIAERESIS
-              (#x8F #x0106)             ; LATIN CAPITAL LETTER C WITH ACUTE
-              (#x90 #x00C9)             ; LATIN CAPITAL LETTER E WITH ACUTE
-              (#x91 #x0139)             ; LATIN CAPITAL LETTER L WITH ACUTE
-              (#x92 #x013A)             ; LATIN SMALL LETTER L WITH ACUTE
-              (#x93 #x00F4)             ; LATIN SMALL LETTER O WITH CIRCUMFLEX
-              (#x94 #x00F6)             ; LATIN SMALL LETTER O WITH DIAERESIS
-              (#x95 #x013D)             ; LATIN CAPITAL LETTER L WITH CARON
-              (#x96 #x013E)             ; LATIN SMALL LETTER L WITH CARON
-              (#x97 #x015A)             ; LATIN CAPITAL LETTER S WITH ACUTE
-              (#x98 #x015B)             ; LATIN SMALL LETTER S WITH ACUTE
-              (#x99 #x00D6)             ; LATIN CAPITAL LETTER O WITH DIAERESIS
-              (#x9A #x00DC)             ; LATIN CAPITAL LETTER U WITH DIAERESIS
-              (#x9B #x0164)             ; LATIN CAPITAL LETTER T WITH CARON
-              (#x9C #x0165)             ; LATIN SMALL LETTER T WITH CARON
-              (#x9D #x0141)             ; LATIN CAPITAL LETTER L WITH STROKE
-              (#x9E #x00D7)             ; MULTIPLICATION SIGN
-              (#x9F #x010D)             ; LATIN SMALL LETTER C WITH CARON
-              (#xA0 #x00E1)             ; LATIN SMALL LETTER A WITH ACUTE
-              (#xA1 #x00ED)             ; LATIN SMALL LETTER I WITH ACUTE
-              (#xA2 #x00F3)             ; LATIN SMALL LETTER O WITH ACUTE
-              (#xA3 #x00FA)             ; LATIN SMALL LETTER U WITH ACUTE
-              (#xA4 #x0104)             ; LATIN CAPITAL LETTER A WITH OGONEK
-              (#xA5 #x0105)             ; LATIN SMALL LETTER A WITH OGONEK
-              (#xA6 #x017D)             ; LATIN CAPITAL LETTER Z WITH CARON
-              (#xA7 #x017E)             ; LATIN SMALL LETTER Z WITH CARON
-              (#xA8 #x0118)             ; LATIN CAPITAL LETTER E WITH OGONEK
-              (#xA9 #x0119)             ; LATIN SMALL LETTER E WITH OGONEK
-              (#xAA #x00AC)             ; NOT SIGN
-              (#xAB #x017A)             ; LATIN SMALL LETTER Z WITH ACUTE
-              (#xAC #x010C)             ; LATIN CAPITAL LETTER C WITH CARON
-              (#xAD #x015F)             ; LATIN SMALL LETTER S WITH CEDILLA
-              (#xAE #x00AB)             ; LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-              (#xAF #x00BB)             ; RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-              (#xB0 #x2591)             ; LIGHT SHADE
-              (#xB1 #x2592)             ; MEDIUM SHADE
-              (#xB2 #x2593)             ; DARK SHADE
-              (#xB3 #x2502)             ; BOX DRAWINGS LIGHT VERTICAL
-              (#xB4 #x2524)             ; BOX DRAWINGS LIGHT VERTICAL AND LEFT
-              (#xB5 #x00C1)             ; LATIN CAPITAL LETTER A WITH ACUTE
-              (#xB6 #x00C2)             ; LATIN CAPITAL LETTER A WITH CIRCUMFLEX
-              (#xB7 #x011A)             ; LATIN CAPITAL LETTER E WITH CARON
-              (#xB8 #x015E)             ; LATIN CAPITAL LETTER S WITH CEDILLA
-              (#xB9 #x2563)             ; BOX DRAWINGS DOUBLE VERTICAL AND LEFT
-              (#xBA #x2551)             ; BOX DRAWINGS DOUBLE VERTICAL
-              (#xBB #x2557)             ; BOX DRAWINGS DOUBLE DOWN AND LEFT
-              (#xBC #x255D)             ; BOX DRAWINGS DOUBLE UP AND LEFT
-              (#xBD #x017B)             ; LATIN CAPITAL LETTER Z WITH DOT ABOVE
-              (#xBE #x017C)             ; LATIN SMALL LETTER Z WITH DOT ABOVE
-              (#xBF #x2510)             ; BOX DRAWINGS LIGHT DOWN AND LEFT
-              (#xC0 #x2514)             ; BOX DRAWINGS LIGHT UP AND RIGHT
-              (#xC1 #x2534)             ; BOX DRAWINGS LIGHT UP AND HORIZONTAL
-              (#xC2 #x252C)             ; BOX DRAWINGS LIGHT DOWN AND HORIZONTAL
-              (#xC3 #x251C)             ; BOX DRAWINGS LIGHT VERTICAL AND RIGHT
-              (#xC4 #x2500)             ; BOX DRAWINGS LIGHT HORIZONTAL
-              (#xC5 #x253C)             ; BOX DRAWINGS LIGHT VERTICAL AND HORIZONTAL
-              (#xC6 #x0102)             ; LATIN CAPITAL LETTER A WITH BREVE
-              (#xC7 #x0103)             ; LATIN SMALL LETTER A WITH BREVE
-              (#xC8 #x255A)             ; BOX DRAWINGS DOUBLE UP AND RIGHT
-              (#xC9 #x2554)             ; BOX DRAWINGS DOUBLE DOWN AND RIGHT
-              (#xCA #x2569)             ; BOX DRAWINGS DOUBLE UP AND HORIZONTAL
-              (#xCB #x2566)             ; BOX DRAWINGS DOUBLE DOWN AND HORIZONTAL
-              (#xCC #x2560)             ; BOX DRAWINGS DOUBLE VERTICAL AND RIGHT
-              (#xCD #x2550)             ; BOX DRAWINGS DOUBLE HORIZONTAL
-              (#xCE #x256C)             ; BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL
-              (#xCF #x00A4)             ; CURRENCY SIGN
-              (#xD0 #x0111)             ; LATIN SMALL LETTER D WITH STROKE
-              (#xD1 #x0110)             ; LATIN CAPITAL LETTER D WITH STROKE
-              (#xD2 #x010E)             ; LATIN CAPITAL LETTER D WITH CARON
-              (#xD3 #x00CB)             ; LATIN CAPITAL LETTER E WITH DIAERESIS
-              (#xD4 #x010F)             ; LATIN SMALL LETTER D WITH CARON
-              (#xD5 #x0147)             ; LATIN CAPITAL LETTER N WITH CARON
-              (#xD6 #x00CD)             ; LATIN CAPITAL LETTER I WITH ACUTE
-              (#xD7 #x00CE)             ; LATIN CAPITAL LETTER I WITH CIRCUMFLEX
-              (#xD8 #x011B)             ; LATIN SMALL LETTER E WITH CARON
-              (#xD9 #x2518)             ; BOX DRAWINGS LIGHT UP AND LEFT
-              (#xDA #x250C)             ; BOX DRAWINGS LIGHT DOWN AND RIGHT
-              (#xDB #x2588)             ; FULL BLOCK
-              (#xDC #x2584)             ; LOWER HALF BLOCK
-              (#xDD #x0162)             ; LATIN CAPITAL LETTER T WITH CEDILLA
-              (#xDE #x016E)             ; LATIN CAPITAL LETTER U WITH RING ABOVE
-              (#xDF #x2580)             ; UPPER HALF BLOCK
-              (#xE0 #x00D3)             ; LATIN CAPITAL LETTER O WITH ACUTE
-              (#xE1 #x00DF)             ; LATIN SMALL LETTER SHARP S
-              (#xE2 #x00D4)             ; LATIN CAPITAL LETTER O WITH CIRCUMFLEX
-              (#xE3 #x0143)             ; LATIN CAPITAL LETTER N WITH ACUTE
-              (#xE4 #x0144)             ; LATIN SMALL LETTER N WITH ACUTE
-              (#xE5 #x0148)             ; LATIN SMALL LETTER N WITH CARON
-              (#xE6 #x0160)             ; LATIN CAPITAL LETTER S WITH CARON
-              (#xE7 #x0161)             ; LATIN SMALL LETTER S WITH CARON
-              (#xE8 #x0154)             ; LATIN CAPITAL LETTER R WITH ACUTE
-              (#xE9 #x00DA)             ; LATIN CAPITAL LETTER U WITH ACUTE
-              (#xEA #x0155)             ; LATIN SMALL LETTER R WITH ACUTE
-              (#xEB #x0170)             ; LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
-              (#xEC #x00FD)             ; LATIN SMALL LETTER Y WITH ACUTE
-              (#xED #x00DD)             ; LATIN CAPITAL LETTER Y WITH ACUTE
-              (#xEE #x0163)             ; LATIN SMALL LETTER T WITH CEDILLA
-              (#xEF #x00B4)             ; ACUTE ACCENT
-              (#xF0 #x00AD)             ; SOFT HYPHEN
-              (#xF1 #x02DD)             ; DOUBLE ACUTE ACCENT
-              (#xF2 #x02DB)             ; OGONEK
-              (#xF3 #x02C7)             ; CARON
-              (#xF4 #x02D8)             ; BREVE
-              (#xF5 #x00A7)             ; SECTION SIGN
-              (#xF6 #x00F7)             ; DIVISION SIGN
-              (#xF7 #x00B8)             ; CEDILLA
-              (#xF8 #x00B0)             ; DEGREE SIGN
-              (#xF9 #x00A8)             ; DIAERESIS
-              (#xFA #x02D9)             ; DOT ABOVE
-              (#xFB #x0171)             ; LATIN SMALL LETTER U WITH DOUBLE ACUTE
-              (#xFC #x0158)             ; LATIN CAPITAL LETTER R WITH CARON
-              (#xFD #x0159)             ; LATIN SMALL LETTER R WITH CARON
-              (#xFE #x25A0)             ; BLACK SQUARE
-              (#xFF #x00A0)             ; NO-BREAK SPACE
-              )
-    do
-      (setf (elt *cp437->unicode* cp437) (code-char unicode))
-      (setf (gethash (code-char unicode) *unicode->cp437*)
-            (code-char cp437)))
+; (loop
+;     for (cp437 unicode)
+;         :in '((#x80 #x00C7)             ; LATIN CAPITAL LETTER C WITH CEDILLA
+;               (#x81 #x00FC)             ; LATIN SMALL LETTER U WITH DIAERESIS
+;               (#x82 #x00E9)             ; LATIN SMALL LETTER E WITH ACUTE
+;               (#x83 #x00E2)             ; LATIN SMALL LETTER A WITH CIRCUMFLEX
+;               (#x84 #x00E4)             ; LATIN SMALL LETTER A WITH DIAERESIS
+;               (#x85 #x016F)             ; LATIN SMALL LETTER U WITH RING ABOVE
+;               (#x86 #x0107)             ; LATIN SMALL LETTER C WITH ACUTE
+;               (#x87 #x00E7)             ; LATIN SMALL LETTER C WITH CEDILLA
+;               (#x88 #x0142)             ; LATIN SMALL LETTER L WITH STROKE
+;               (#x89 #x00EB)             ; LATIN SMALL LETTER E WITH DIAERESIS
+;               (#x8A #x0150)             ; LATIN CAPITAL LETTER O WITH DOUBLE ACUTE
+;               (#x8B #x0151)             ; LATIN SMALL LETTER O WITH DOUBLE ACUTE
+;               (#x8C #x00EE)             ; LATIN SMALL LETTER I WITH CIRCUMFLEX
+;               (#x8D #x0179)             ; LATIN CAPITAL LETTER Z WITH ACUTE
+;               (#x8E #x00C4)             ; LATIN CAPITAL LETTER A WITH DIAERESIS
+;               (#x8F #x0106)             ; LATIN CAPITAL LETTER C WITH ACUTE
+;               (#x90 #x00C9)             ; LATIN CAPITAL LETTER E WITH ACUTE
+;               (#x91 #x0139)             ; LATIN CAPITAL LETTER L WITH ACUTE
+;               (#x92 #x013A)             ; LATIN SMALL LETTER L WITH ACUTE
+;               (#x93 #x00F4)             ; LATIN SMALL LETTER O WITH CIRCUMFLEX
+;               (#x94 #x00F6)             ; LATIN SMALL LETTER O WITH DIAERESIS
+;               (#x95 #x013D)             ; LATIN CAPITAL LETTER L WITH CARON
+;               (#x96 #x013E)             ; LATIN SMALL LETTER L WITH CARON
+;               (#x97 #x015A)             ; LATIN CAPITAL LETTER S WITH ACUTE
+;               (#x98 #x015B)             ; LATIN SMALL LETTER S WITH ACUTE
+;               (#x99 #x00D6)             ; LATIN CAPITAL LETTER O WITH DIAERESIS
+;               (#x9A #x00DC)             ; LATIN CAPITAL LETTER U WITH DIAERESIS
+;               (#x9B #x0164)             ; LATIN CAPITAL LETTER T WITH CARON
+;               (#x9C #x0165)             ; LATIN SMALL LETTER T WITH CARON
+;               (#x9D #x0141)             ; LATIN CAPITAL LETTER L WITH STROKE
+;               (#x9E #x00D7)             ; MULTIPLICATION SIGN
+;               (#x9F #x010D)             ; LATIN SMALL LETTER C WITH CARON
+;               (#xA0 #x00E1)             ; LATIN SMALL LETTER A WITH ACUTE
+;               (#xA1 #x00ED)             ; LATIN SMALL LETTER I WITH ACUTE
+;               (#xA2 #x00F3)             ; LATIN SMALL LETTER O WITH ACUTE
+;               (#xA3 #x00FA)             ; LATIN SMALL LETTER U WITH ACUTE
+;               (#xA4 #x0104)             ; LATIN CAPITAL LETTER A WITH OGONEK
+;               (#xA5 #x0105)             ; LATIN SMALL LETTER A WITH OGONEK
+;               (#xA6 #x017D)             ; LATIN CAPITAL LETTER Z WITH CARON
+;               (#xA7 #x017E)             ; LATIN SMALL LETTER Z WITH CARON
+;               (#xA8 #x0118)             ; LATIN CAPITAL LETTER E WITH OGONEK
+;               (#xA9 #x0119)             ; LATIN SMALL LETTER E WITH OGONEK
+;               (#xAA #x00AC)             ; NOT SIGN
+;               (#xAB #x017A)             ; LATIN SMALL LETTER Z WITH ACUTE
+;               (#xAC #x010C)             ; LATIN CAPITAL LETTER C WITH CARON
+;               (#xAD #x015F)             ; LATIN SMALL LETTER S WITH CEDILLA
+;               (#xAE #x00AB)             ; LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+;               (#xAF #x00BB)             ; RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+;               (#xB0 #x2591)             ; LIGHT SHADE
+;               (#xB1 #x2592)             ; MEDIUM SHADE
+;               (#xB2 #x2593)             ; DARK SHADE
+;               (#xB3 #x2502)             ; BOX DRAWINGS LIGHT VERTICAL
+;               (#xB4 #x2524)             ; BOX DRAWINGS LIGHT VERTICAL AND LEFT
+;               (#xB5 #x00C1)             ; LATIN CAPITAL LETTER A WITH ACUTE
+;               (#xB6 #x00C2)             ; LATIN CAPITAL LETTER A WITH CIRCUMFLEX
+;               (#xB7 #x011A)             ; LATIN CAPITAL LETTER E WITH CARON
+;               (#xB8 #x015E)             ; LATIN CAPITAL LETTER S WITH CEDILLA
+;               (#xB9 #x2563)             ; BOX DRAWINGS DOUBLE VERTICAL AND LEFT
+;               (#xBA #x2551)             ; BOX DRAWINGS DOUBLE VERTICAL
+;               (#xBB #x2557)             ; BOX DRAWINGS DOUBLE DOWN AND LEFT
+;               (#xBC #x255D)             ; BOX DRAWINGS DOUBLE UP AND LEFT
+;               (#xBD #x017B)             ; LATIN CAPITAL LETTER Z WITH DOT ABOVE
+;               (#xBE #x017C)             ; LATIN SMALL LETTER Z WITH DOT ABOVE
+;               (#xBF #x2510)             ; BOX DRAWINGS LIGHT DOWN AND LEFT
+;               (#xC0 #x2514)             ; BOX DRAWINGS LIGHT UP AND RIGHT
+;               (#xC1 #x2534)             ; BOX DRAWINGS LIGHT UP AND HORIZONTAL
+;               (#xC2 #x252C)             ; BOX DRAWINGS LIGHT DOWN AND HORIZONTAL
+;               (#xC3 #x251C)             ; BOX DRAWINGS LIGHT VERTICAL AND RIGHT
+;               (#xC4 #x2500)             ; BOX DRAWINGS LIGHT HORIZONTAL
+;               (#xC5 #x253C)             ; BOX DRAWINGS LIGHT VERTICAL AND HORIZONTAL
+;               (#xC6 #x0102)             ; LATIN CAPITAL LETTER A WITH BREVE
+;               (#xC7 #x0103)             ; LATIN SMALL LETTER A WITH BREVE
+;               (#xC8 #x255A)             ; BOX DRAWINGS DOUBLE UP AND RIGHT
+;               (#xC9 #x2554)             ; BOX DRAWINGS DOUBLE DOWN AND RIGHT
+;               (#xCA #x2569)             ; BOX DRAWINGS DOUBLE UP AND HORIZONTAL
+;               (#xCB #x2566)             ; BOX DRAWINGS DOUBLE DOWN AND HORIZONTAL
+;               (#xCC #x2560)             ; BOX DRAWINGS DOUBLE VERTICAL AND RIGHT
+;               (#xCD #x2550)             ; BOX DRAWINGS DOUBLE HORIZONTAL
+;               (#xCE #x256C)             ; BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL
+;               (#xCF #x00A4)             ; CURRENCY SIGN
+;               (#xD0 #x0111)             ; LATIN SMALL LETTER D WITH STROKE
+;               (#xD1 #x0110)             ; LATIN CAPITAL LETTER D WITH STROKE
+;               (#xD2 #x010E)             ; LATIN CAPITAL LETTER D WITH CARON
+;               (#xD3 #x00CB)             ; LATIN CAPITAL LETTER E WITH DIAERESIS
+;               (#xD4 #x010F)             ; LATIN SMALL LETTER D WITH CARON
+;               (#xD5 #x0147)             ; LATIN CAPITAL LETTER N WITH CARON
+;               (#xD6 #x00CD)             ; LATIN CAPITAL LETTER I WITH ACUTE
+;               (#xD7 #x00CE)             ; LATIN CAPITAL LETTER I WITH CIRCUMFLEX
+;               (#xD8 #x011B)             ; LATIN SMALL LETTER E WITH CARON
+;               (#xD9 #x2518)             ; BOX DRAWINGS LIGHT UP AND LEFT
+;               (#xDA #x250C)             ; BOX DRAWINGS LIGHT DOWN AND RIGHT
+;               (#xDB #x2588)             ; FULL BLOCK
+;               (#xDC #x2584)             ; LOWER HALF BLOCK
+;               (#xDD #x0162)             ; LATIN CAPITAL LETTER T WITH CEDILLA
+;               (#xDE #x016E)             ; LATIN CAPITAL LETTER U WITH RING ABOVE
+;               (#xDF #x2580)             ; UPPER HALF BLOCK
+;               (#xE0 #x00D3)             ; LATIN CAPITAL LETTER O WITH ACUTE
+;               (#xE1 #x00DF)             ; LATIN SMALL LETTER SHARP S
+;               (#xE2 #x00D4)             ; LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+;               (#xE3 #x0143)             ; LATIN CAPITAL LETTER N WITH ACUTE
+;               (#xE4 #x0144)             ; LATIN SMALL LETTER N WITH ACUTE
+;               (#xE5 #x0148)             ; LATIN SMALL LETTER N WITH CARON
+;               (#xE6 #x0160)             ; LATIN CAPITAL LETTER S WITH CARON
+;               (#xE7 #x0161)             ; LATIN SMALL LETTER S WITH CARON
+;               (#xE8 #x0154)             ; LATIN CAPITAL LETTER R WITH ACUTE
+;               (#xE9 #x00DA)             ; LATIN CAPITAL LETTER U WITH ACUTE
+;               (#xEA #x0155)             ; LATIN SMALL LETTER R WITH ACUTE
+;               (#xEB #x0170)             ; LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
+;               (#xEC #x00FD)             ; LATIN SMALL LETTER Y WITH ACUTE
+;               (#xED #x00DD)             ; LATIN CAPITAL LETTER Y WITH ACUTE
+;               (#xEE #x0163)             ; LATIN SMALL LETTER T WITH CEDILLA
+;               (#xEF #x00B4)             ; ACUTE ACCENT
+;               (#xF0 #x00AD)             ; SOFT HYPHEN
+;               (#xF1 #x02DD)             ; DOUBLE ACUTE ACCENT
+;               (#xF2 #x02DB)             ; OGONEK
+;               (#xF3 #x02C7)             ; CARON
+;               (#xF4 #x02D8)             ; BREVE
+;               (#xF5 #x00A7)             ; SECTION SIGN
+;               (#xF6 #x00F7)             ; DIVISION SIGN
+;               (#xF7 #x00B8)             ; CEDILLA
+;               (#xF8 #x00B0)             ; DEGREE SIGN
+;               (#xF9 #x00A8)             ; DIAERESIS
+;               (#xFA #x02D9)             ; DOT ABOVE
+;               (#xFB #x0171)             ; LATIN SMALL LETTER U WITH DOUBLE ACUTE
+;               (#xFC #x0158)             ; LATIN CAPITAL LETTER R WITH CARON
+;               (#xFD #x0159)             ; LATIN SMALL LETTER R WITH CARON
+;               (#xFE #x25A0)             ; BLACK SQUARE
+;               (#xFF #x00A0)             ; NO-BREAK SPACE
+;               )
+;     do
+;       (setf (elt *cp437->unicode* cp437) (code-char unicode))
+;       (setf (gethash (code-char unicode) *unicode->cp437*)
+;             (code-char cp437)))
 
 (defmethod write-zipentry
     (zip-writer name (data pathname)
